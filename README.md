@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Odinbook
+
+This is the final project of [The Odin Project](https://www.theodinproject.com/lessons/nodejs-odin-book)'s NodeJS path. I will be re-creating the functionality of Facebook as closely as possible in a React App.
+
+## [Back End](https://github.com/TRFielder/odinbook-api)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
