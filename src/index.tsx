@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <Helmet>
+        <meta property="og:title" content="Odinbook" />
+        <meta name="description" content="A react social app" />
+        <meta charSet="utf-8" />
+        <title>Odinbook</title>
+      </Helmet>
+      <App />
+    </HelmetProvider>
   </React.StrictMode>,
 );
 
