@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import Login from './index';
 
 test('renders hello profile text', () => {
-  //Expect the button to say "Login with Facebook"
+  //Expect the button to link to backend auth endpoint
   render(<Login />);
-  const buttonElement = screen.getByText(/Login with Facebook/i);
-  expect(buttonElement).toBeInTheDocument();
+  const loginButton = screen.getByText(/Login with Facebook/i);
+  expect(loginButton).toHaveAttribute('href', 'https://localhost:3000/api/user/auth/facebook');
 });
