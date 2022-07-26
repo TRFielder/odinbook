@@ -5,7 +5,13 @@ const Login: FC = (): ReactElement => {
     console.log('Loaded Login component');
   }, []);
 
-  return <a href="https://localhost:3000/api/user/auth/facebook">Login with Facebook</a>;
+  return (
+    <section>
+      <a href="https://localhost:3000/api/user/auth/facebook" className="text-2xl font-bold underline">
+        Login with Facebook
+      </a>
+    </section>
+  );
 };
 
 export default Login;
