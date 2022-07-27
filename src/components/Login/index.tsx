@@ -6,9 +6,9 @@ const Login: FC = (): ReactElement => {
   }, []);
 
   const authenticate = async () => {
-    const response = await fetch('https://localhost:3000/api/user/auth/facebook', { mode: 'cors' });
+    const response = await fetch('https://localhost:3000/api/user/current', { credentials: 'include', mode: 'cors' });
     const result = await response.json();
-    console.log(result);
+    console.log(result.firstname + ' ' + result.surname);
   };
 
   return (
