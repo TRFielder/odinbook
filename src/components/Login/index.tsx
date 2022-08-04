@@ -3,6 +3,7 @@ import React, { FC, ReactElement, useEffect } from 'react';
 const Login: FC = (): ReactElement => {
   useEffect(() => {
     console.log('Loaded Login component');
+    authenticate();
   }, []);
 
   const authenticate = async () => {
