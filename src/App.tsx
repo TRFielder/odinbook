@@ -5,6 +5,9 @@ import Login from './components/Login';
 import { UserContext } from './utilities/UserContext';
 import UserType from './utilities/UserType';
 
+// Basic style import
+import './App.css';
+
 function App() {
   const [user, setUser] = useState<UserType | null>(null);
   return (

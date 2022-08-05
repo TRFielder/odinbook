@@ -30,12 +30,14 @@ const Profile: FC = (): ReactElement => {
   };
 
   return (
-    <div>
+    <>
       <Nav />
-      {user !== null ? <p>Hello, {user.firstname}</p> : <p>Hello</p>}
-      <img src={user?.avatar_URL}></img>
-      <button onClick={() => reportUser()}>Who am i</button>
-    </div>
+      <main className="top-4">
+        {user !== null ? <p>Hello, {user.firstname}</p> : <p>Hello</p>}
+        <img src={user?.avatar_URL}></img>
+        <button onClick={() => reportUser()}>Who am i</button>
+      </main>
+    </>
   );
 };
 
