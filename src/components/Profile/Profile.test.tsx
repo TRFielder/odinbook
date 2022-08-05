@@ -4,6 +4,6 @@ import Profile from './index';
 
 test('renders hello profile text', () => {
   render(<Profile />);
-  const textElement = screen.getByText(/Hello Profile component/i);
+  const textElement = screen.getByText(/Hello/i);
   expect(textElement).toBeInTheDocument();
 });

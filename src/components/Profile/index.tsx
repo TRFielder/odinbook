@@ -1,6 +1,9 @@
 import React, { FC, ReactElement, useContext, useEffect } from 'react';
 import { UserContext } from '../../utilities/UserContext';
 
+// Component imports
+import Nav from '../Nav';
+
 const Profile: FC = (): ReactElement => {
   const { user, setUser } = useContext(UserContext);
 
@@ -28,7 +31,7 @@ const Profile: FC = (): ReactElement => {
 
   return (
     <div>
-      <h2>Profile component</h2>
+      <Nav />
       {user !== null ? <p>Hello, {user.firstname}</p> : <p>Hello</p>}
       <img src={user?.avatar_URL}></img>
       <button onClick={() => reportUser()}>Who am i</button>
