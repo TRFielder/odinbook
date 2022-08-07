@@ -31,7 +31,6 @@ const Profile: FC = (): ReactElement => {
 
   return (
     <>
-      <Nav />
       <main className="top-4">
         {user !== null ? <p>Hello, {user.firstname}</p> : <p>Hello</p>}
         <img src={user?.avatar_URL}></img>

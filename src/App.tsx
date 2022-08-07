@@ -4,6 +4,7 @@ import Profile from './components/Profile';
 import Login from './components/Login';
 import { UserContext } from './utilities/UserContext';
 import UserType from './utilities/UserType';
+import Nav from './components/Nav';
 
 // Basic style import
 import './App.css';
@@ -12,6 +13,9 @@ function App() {
   const [user, setUser] = useState<UserType | null>(null);
   return (
     <HashRouter>
+      <UserContext.Provider value={{ user, setUser }}>
+        <Nav />
+      </UserContext.Provider>
       <Routes>
         <Route
           path="/"

@@ -17,8 +17,8 @@ const Nav: FC = (): ReactElement => {
         <li className="mr-4 text-white font-bold no-underline duration-300 hover:scale-125">
           <Link to="/profile">{user?.firstname}</Link>
         </li>
-        <Link to="/profile">
-          <img src={user?.avatar_URL} className="rounded-full"></img>
+        <Link to="/profile" className="h-full">
+          <img src={user?.avatar_URL} className="rounded-full h-full"></img>
         </Link>
       </ul>
     </nav>
