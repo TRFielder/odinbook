@@ -2,24 +2,24 @@ import React, { FC, ReactElement, useContext, useEffect } from 'react';
 import { UserContext } from '../../utilities/UserContext';
 
 // Component imports
-import Nav from '../Nav';
+import Feed from '../Feed/Feed';
+import ProfileBanner from './ProfileBanner/ProfileBanner';
 
 const Profile: FC = (): ReactElement => {
   const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
-    console.log('Loaded Login component');
     authenticate();
   }, []);
 
   const reportUser = () => {
     console.log(`My name is ${user?.firstname} ${user?.surname}`);
   };
+  // warm-beyond-87416.herokuapp.com
 
   const authenticate = async () => {
     const response = await fetch('https://warm-beyond-87416.herokuapp.com/api/user/current', { credentials: 'include', mode: 'cors' });
     const result = await response.json();
-    console.log(result);
     setUser({
       id: result._id,
       username: result.username,
@@ -30,13 +30,10 @@ const Profile: FC = (): ReactElement => {
   };
 
   return (
-    <>
-      <main className="top-4">
-        {user !== null ? <p>Hello, {user.firstname}</p> : <p>Hello</p>}
-        <img src={user?.avatar_URL}></img>
-        <button onClick={() => reportUser()}>Who am i</button>
-      </main>
-    </>
+    <main className="mt-4 w-4/5 flex flex-col items-center">
+      <ProfileBanner />
+      <Feed />
+    </main>
   );
 };
 
