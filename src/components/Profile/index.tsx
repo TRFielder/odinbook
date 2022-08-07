@@ -17,7 +17,7 @@ const Profile: FC = (): ReactElement => {
   };
 
   const authenticate = async () => {
-    const response = await fetch('https://localhost:3000/api/user/current', { credentials: 'include', mode: 'cors' });
+    const response = await fetch('https://warm-beyond-87416.herokuapp.com/api/user/current', { credentials: 'include', mode: 'cors' });
     const result = await response.json();
     console.log(result);
     setUser({
