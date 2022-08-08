@@ -5,9 +5,16 @@ import Login from './components/Login';
 import { UserContext } from './utilities/UserContext';
 import UserType from './utilities/UserType';
 import Nav from './components/Nav';
+import PostLogin from './components/PostLogin';
+import ProtectedRoute, { ProtectedRouteProps } from './components/ProtectedRoute/ProtectedRoute';
 
 // Basic style import
 import './App.css';
+
+// Protected route default props
+const defaultProtectedRouteProps: Omit<ProtectedRouteProps, 'outlet'> = {
+  authenticationPath: '/login',
+};
 
 function App() {
   const [user, setUser] = useState<UserType | null>(null);
@@ -18,7 +25,7 @@ function App() {
       </UserContext.Provider>
       <Routes>
         <Route
-          path="/"
+          path="/login"
           element={
             <UserContext.Provider value={{ user, setUser }}>
               <Login />
@@ -26,10 +33,18 @@ function App() {
           }
         />
         <Route
-          path="/profile"
+          path="/profile/:id"
           element={
             <UserContext.Provider value={{ user, setUser }}>
-              <Profile />
+              <ProtectedRoute {...defaultProtectedRouteProps} outlet={<Profile />} />
+            </UserContext.Provider>
+          }
+        />
+        <Route
+          path="/postlogin"
+          element={
+            <UserContext.Provider value={{ user, setUser }}>
+              <PostLogin />
             </UserContext.Provider>
           }
         />
