@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Profile from './components/Profile';
 import Login from './components/Login';
 import { UserContext } from './utilities/UserContext';
@@ -24,6 +24,7 @@ function App() {
         <Nav />
       </UserContext.Provider>
       <Routes>
+        <Route path="/" element={<Navigate to="/login" />}></Route>
         <Route
           path="/login"
           element={
