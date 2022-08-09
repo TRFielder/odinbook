@@ -10,7 +10,15 @@ import ProfileBanner from './ProfileBanner/ProfileBanner';
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
   const params = useParams();
-  const [profile, setProfile] = useState<UserType>({ _id: '', username: '', firstname: '', surname: '', friends: [], avatar_URL: '' });
+  const [profile, setProfile] = useState<UserType>({
+    _id: '',
+    username: '',
+    firstname: '',
+    surname: '',
+    friends: [],
+    avatar_URL: '',
+    about_text: '',
+  });
 
   useEffect(() => {
     getProfileData();
@@ -28,6 +36,7 @@ const Profile = () => {
       surname: result.surname,
       friends: result.friends,
       avatar_URL: result.avatar_URL,
+      about_text: result.about_text,
     });
   };
 

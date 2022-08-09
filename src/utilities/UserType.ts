@@ -5,6 +5,7 @@ type UserType = {
   surname: string;
   friends?: Array<UserType>;
   avatar_URL: string;
+  about_text?: string;
 };
 
 export default UserType;
