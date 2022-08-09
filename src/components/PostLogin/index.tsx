@@ -19,7 +19,7 @@ const PostLogin: FC = (): ReactElement => {
     const response = await fetch(`https://warm-beyond-87416.herokuapp.com/api/user/current`, { credentials: 'include', mode: 'cors' });
     const result = await response.json();
     setUser({
-      id: result._id,
+      _id: result._id,
       username: result.username,
       firstname: result.firstname,
       surname: result.surname,
@@ -27,7 +27,7 @@ const PostLogin: FC = (): ReactElement => {
     });
   };
 
-  return user ? <Navigate to={`/profile/${user?.id}`} /> : <p>Loading</p>;
+  return user ? <Navigate to={`/profile/${user?._id}`} /> : <p>Loading</p>;
 };
 
 export default PostLogin;

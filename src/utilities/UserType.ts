@@ -1,8 +1,9 @@
 type UserType = {
-  id: string;
+  _id: string;
   username: string;
   firstname: string;
   surname: string;
+  friends?: Array<UserType>;
   avatar_URL: string;
 };
 
