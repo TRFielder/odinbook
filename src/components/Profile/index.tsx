@@ -27,7 +27,7 @@ const Profile = () => {
   // warm-beyond-87416.herokuapp.com
 
   const getProfileData = async () => {
-    const response = await fetch(`https://warm-beyond-87416.herokuapp.com/api/user/${params.id}`, { credentials: 'include', mode: 'cors' });
+    const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/user/${params.id}`, { credentials: 'include', mode: 'cors' });
     const result = await response.json();
     setProfile({
       _id: result._id,

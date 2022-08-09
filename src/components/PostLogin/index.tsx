@@ -16,7 +16,7 @@ const PostLogin: FC = (): ReactElement => {
   // warm-beyond-87416.herokuapp.com
 
   const getUser = async () => {
-    const response = await fetch(`https://warm-beyond-87416.herokuapp.com/api/user/current`, { credentials: 'include', mode: 'cors' });
+    const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/user/current`, { credentials: 'include', mode: 'cors' });
     const result = await response.json();
     setUser({
       _id: result._id,

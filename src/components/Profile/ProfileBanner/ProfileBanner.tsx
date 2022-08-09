@@ -1,8 +1,8 @@
-import React, { FC, ReactElement, useEffect, useContext } from 'react';
+import { FC, useContext } from 'react';
 import { UserContext } from '../../../utilities/UserContext';
 import UserType from '../../../utilities/UserType';
 
-const ProfileBanner = ({ _id, username, firstname, surname, friends, avatar_URL, about_text }: UserType) => {
+const ProfileBanner: FC<UserType> = ({ _id, username, firstname, surname, friends, avatar_URL, about_text }: UserType) => {
   const { user, setUser } = useContext(UserContext);
   return (
     <section className="bg-white items-center border-none rounded-lg mt-10 mx-0 mb-0 pt-5 px-0 pb-7 w-4/5 shadow-sm text-center flex flex-col md:flex-row">
