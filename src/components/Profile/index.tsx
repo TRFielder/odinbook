@@ -5,6 +5,7 @@ import UserType from '../../utilities/UserType';
 
 // Component imports
 import Feed from '../Feed/Feed';
+import NewPost from '../NewPost';
 import ProfileBanner from './ProfileBanner/ProfileBanner';
 
 const Profile = () => {
@@ -43,6 +44,7 @@ const Profile = () => {
   return (
     <main className="mt-4 w-4/5 flex flex-col items-center">
       <ProfileBanner {...profile} />
+      <NewPost />
       <Feed />
     </main>
   );
