@@ -14,6 +14,7 @@ const NewPost: FC = (): ReactElement => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<FormValues>();
 
   const onSubmit = async (data: FormValues) => {
@@ -30,7 +31,7 @@ const NewPost: FC = (): ReactElement => {
       }),
     });
     const response = await result.json();
-    console.log(response);
+    reset(); //Clear form after submit
   };
 
   return (

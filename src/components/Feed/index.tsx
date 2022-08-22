@@ -2,6 +2,7 @@ import React, { FC, ReactElement, useEffect, useContext, useState } from 'react'
 import { UserContext } from '../../utilities/UserContext';
 import { useParams } from 'react-router-dom';
 import PostType from '../../utilities/PostType';
+import Post from './Post';
 
 const Feed: FC = (): ReactElement => {
   const { user, setUser } = useContext(UserContext);
@@ -22,8 +23,22 @@ const Feed: FC = (): ReactElement => {
   };
 
   return (
-    <section className="bg-white items-center border-none rounded-lg mt-10 mx-0 mb-0 pt-5 px-0 pb-7 w-4/5 shadow-sm text-center">
-      {posts.length === 0 ? <p>This is where my posts would go... if I had any</p> : posts.map((post) => <p key={post._id}>{post.text}</p>)}
+    <section className="w-4/5  flex flex-col items-center">
+      {posts.length === 0 ? (
+        <p>This is where my posts would go... if I had any</p>
+      ) : (
+        posts.map((post) => (
+          <Post
+            key={post._id}
+            _id={post._id}
+            author={post.author}
+            text={post.text}
+            date={post.date}
+            likes={post.likes}
+            comments={post.comments}
+          />
+        ))
+      )}
     </section>
   );
 };

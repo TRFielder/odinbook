@@ -3,7 +3,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import { UserContext } from '../../utilities/UserContext';
 
 // Component imports
-import Feed from '../Feed/Feed';
+import Feed from '../Feed';
 
 const PostLogin: FC = (): ReactElement => {
   const { user, setUser } = useContext(UserContext);

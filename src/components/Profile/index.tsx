@@ -4,7 +4,7 @@ import { UserContext } from '../../utilities/UserContext';
 import UserType from '../../utilities/UserType';
 
 // Component imports
-import Feed from '../Feed/Feed';
+import Feed from '../Feed';
 import NewPost from '../NewPost';
 import ProfileBanner from './ProfileBanner/ProfileBanner';
 
