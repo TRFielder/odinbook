@@ -23,7 +23,7 @@ const Feed: FC = (): ReactElement => {
   };
 
   return (
-    <section className="w-4/5  flex flex-col items-center">
+    <section className="w-4/5  flex flex-col items-end">
       {posts.length === 0 ? (
         <p>This is where my posts would go... if I had any</p>
       ) : (
