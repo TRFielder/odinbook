@@ -1,5 +1,4 @@
-import React, { FC, ReactElement, useEffect, useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { FC, ReactElement } from 'react';
 import PostType from '../../../utilities/PostType';
 import { DateTime } from 'luxon';
 
