@@ -49,6 +49,14 @@ function App() {
             </UserContext.Provider>
           }
         />
+        <Route
+          path="/me"
+          element={
+            <UserContext.Provider value={{ user, setUser }}>
+              <ProtectedRoute {...defaultProtectedRouteProps} outlet={<Navigate to={`/profile/${user?._id}`} />} />
+            </UserContext.Provider>
+          }
+        />
       </Routes>
     </HashRouter>
   );

@@ -1,6 +1,7 @@
 import React, { FC, ReactElement, useContext } from 'react';
 import { UserContext } from '../../utilities/UserContext';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
 
 const url = `${process.env.REACT_APP_API_ENDPOINT}/api/post`;
 
@@ -17,6 +18,8 @@ const NewPost: FC = (): ReactElement => {
     reset,
   } = useForm<FormValues>();
 
+  const navigate = useNavigate();
+
   const onSubmit = async (data: FormValues) => {
     const result = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/api/post`, {
       method: 'POST',
@@ -32,6 +35,7 @@ const NewPost: FC = (): ReactElement => {
     });
     const response = await result.json();
     reset(); //Clear form after submit
+    navigate(`/profile/${user?._id}`);
   };
 
   return (

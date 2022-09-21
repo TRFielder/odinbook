@@ -15,7 +15,7 @@ const Nav: FC = (): ReactElement => {
           <Link to="/friends">Friends</Link>
         </li>
         <li className="hidden md:inline mr-4 text-white font-bold no-underline duration-300 hover:scale-125">
-          <Link to={`/profile/${user?._id}`}>{user?.firstname}</Link>
+          <Link to={`/me`}>{user?.firstname}</Link>
         </li>
         <Link to={`/profile/${user?._id}`} className="h-14 w-14">
           <img src={user?.avatar_URL} className="rounded-full h-full"></img>
